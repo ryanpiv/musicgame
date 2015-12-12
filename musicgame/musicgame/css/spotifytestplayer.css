@@ -1,0 +1,30 @@
+﻿body {
+    padding: 20px;
+    background-color: #2e2e2e;
+}
+
+.container{
+    background-color: #2e2e2e;
+}
+
+h1 {
+    color:white;
+}
+
+#search-form, .form-control {
+    margin-bottom: 20px;
+}
+
+.cover {
+    height: 300px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.cover:hover {
+    cursor: pointer;
+}
+
+.cover.playing {
+    border: 5px solid #e45343;
+}

@@ -1,10 +1,46 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <!-- external js -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- external stylsheets -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!-- internal styleesheets -->
+    <link type="text/css" rel="stylesheet" href="css/spotifytestplayer.css" />
+    <!-- internal js -->
+    <script src="js/handlebars-v4.0.5.js"></script>
 </head>
 <body>
+    <div class="container">
+        <h1>Search</h1>
+        <form id="search-form">
+            <input type="text" id="artist" value="" class="form-control" />
+            <input type="text" id="song" value="" class="form-control" />
+            <input type="text" id="album" value="" class="form-control" />
+            <input type="submit" id="search" class="btn btn-primary" value="Search" />
+        </form>
+        <div id="results"></div>
+    </div>
 
+    <div class="row">
+        <script id="results-template" type="text/x-handlebars-template">
+            {{#each albums.items}}
+            <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover col-lg-4"></div>
+            {{/each}}
+        </script>
+    </div>
+
+    <script src="js/spotifytestplayer.js"></script>
 </body>
 </html>
